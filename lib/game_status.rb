@@ -15,15 +15,17 @@ WIN_COMBINATIONS = [
   [2, 4, 6]
 ]
 
-def full?(board)
-  board.all? do |position|
-    position_taken?(position)
-  end
-end
-
 def won?(board)
-  WIN_COMBINATIONS.select do |combination|
-    if position_taken?(board, combination[0]) && position_taken?(board, combination[1]) && position_taken?(board, combination[2])
+  WIN_COMBINATIONS.each do |combination|
+    index_1 = combination[0]
+    index_2 = combination[1]
+    index_3 = combination[2]
+
+    pos_1 = board[index_1]
+    pos_2 = board[index_2]
+    pos_3 = board[index_3]
+
+    if position_taken?(board, index_1) && position_taken?(board, index_2) && position_taken?(board, index_2)
       return combination
     else
       false
