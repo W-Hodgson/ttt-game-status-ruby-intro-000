@@ -19,6 +19,8 @@ def won?(board)
   WIN_COMBINATIONS.select do |combination|
     if board[combination[0]] == "X" && board[combination[1]] == "X" && board[combination[2]] == "X"
       return combination
+    else
+      nil
     end
   end
 end
