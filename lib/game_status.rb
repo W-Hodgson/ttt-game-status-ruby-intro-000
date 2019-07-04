@@ -22,7 +22,7 @@ def won?(board)
     if x_victory || o_victory
       return combination
     else
-      falsey
+      false
     end
   end
 end
