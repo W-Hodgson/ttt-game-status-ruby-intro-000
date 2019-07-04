@@ -18,13 +18,13 @@ WIN_COMBINATIONS = [
 def won?(board)
   winning_array = WIN_COMBINATIONS.select do |combination|
     if position_taken?(board, combination[0]) && position_taken?(board, combination[1]) && position_taken?(board, combination[2])
-      puts combination
+      combination
     else
       false
     end
   end
   if winning_array != [] and winning_array.length == 1
-    true
+    winning_array
   else
     false
   end
