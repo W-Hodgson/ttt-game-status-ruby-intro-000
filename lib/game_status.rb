@@ -17,12 +17,8 @@ WIN_COMBINATIONS = [
 
 def won?(board)
   winning_array = WIN_COMBINATIONS.select do |combination|
-    x_victory = combination.all? do |index|
-      board[index] = "X"
-    end
-    o_victory = combination.all? do |index|
-      board[index] = "O"
-    end
+    x_victory = board[combination[0]] == "X" && board[combination[1]] == "X" && board[combination[2]] == "X"
+    o_victory = board[combination[0]] == "O" && board[combination[1]] == "O" && board[combination[2]] == "O"
     if x_victory || o_victory
       combination
     else
