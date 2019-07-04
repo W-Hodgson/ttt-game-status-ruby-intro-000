@@ -18,7 +18,7 @@ WIN_COMBINATIONS = [
 def won?(board)
   winning_array = WIN_COMBINATIONS.select do |combination|
     if position_taken?(board, combination[0]) && position_taken?(board, combination[1]) && position_taken?(board, combination[2])
-      return combination
+      true
     else
       false
     end
