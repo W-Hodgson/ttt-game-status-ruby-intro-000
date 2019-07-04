@@ -16,7 +16,7 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-  winning_array = WIN_COMBINATIONS.each do |combination|
+  winning_array = WIN_COMBINATIONS.select do |combination|
     x_victory = combination[0] == "X" && combination[1] == "X" && combination[2] == "X"
     o_victory = combination[0] == "O" && combination[1] == "O" && combination[2] == "O"
     if x_victory || o_victory
