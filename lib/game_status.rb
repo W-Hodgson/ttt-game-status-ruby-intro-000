@@ -20,7 +20,7 @@ def won?(board)
     x_victory = combination[0] == "X" && combination[1] == "X" && combination[2] == "X"
     o_victory = combination[0] == "O" && combination[1] == "O" && combination[2] == "O"
     if x_victory || o_victory
-      return combination
+      combination
     else
       false
     end
