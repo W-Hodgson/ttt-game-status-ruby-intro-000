@@ -16,16 +16,26 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-  winning_array = WIN_COMBINATIONS.select do |combination|
-    if position_taken?(board, combination[0]) && position_taken?(board, combination[1]) && position_taken?(board, combination[2])
-      combination
-    else
-      false
+  WIN_COMBINATIONS.each do |combination|
+    x_victory = combination[0] == "X" && combination[1] == "X" && combination[2] == "X"
+    o_victory = combination[0] == "O" && combination[1] == "O" && combination[2] == "O"
+    if x_victory || o_victory
+      return combination
     end
   end
-  if winning_array != [] and winning_array.length == 1
-    winning_array[0]
-  else
-    false
-  end
 end
+
+# def won?(board)
+#   winning_array = WIN_COMBINATIONS.select do |combination|
+#     if position_taken?(board, combination[0]) && position_taken?(board, combination[1]) && position_taken?(board, combination[2])
+#       combination
+#     else
+#       false
+#     end
+#   end
+#   if winning_array != [] and winning_array.length == 1
+#     winning_array[0]
+#   else
+#     false
+#   end
+# end
