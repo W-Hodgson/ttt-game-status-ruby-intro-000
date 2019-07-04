@@ -14,3 +14,11 @@ WIN_COMBINATIONS = [
   [0, 4, 8],
   [2, 4, 6]
 ]
+
+def won?(board)
+  WIN_COMBINATIONS.each do |combination|
+    if board[combination[0]] == "X" && board[combination[1]] == "X" && board[combination[2]] == "X"
+      true
+    end
+  end
+end
