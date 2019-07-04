@@ -24,7 +24,7 @@ def won?(board)
     end
   end
   if winning_array != [] and winning_array.length == 1
-    winning_array
+    winning_array[0]
   else
     false
   end
