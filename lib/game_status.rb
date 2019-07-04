@@ -15,21 +15,12 @@ WIN_COMBINATIONS = [
   [2, 4, 6]
 ]
 
-def full?(board)
-  board.all? do |position|
-    
-  end
-end
-
 def won?(board)
-  winning_position = WIN_COMBINATIONS.select do |combination|
-    combination.all? do |position|
-      position_taken?(board, position)
+  WIN_COMBINATIONS.each do |combination|
+    if position_taken?(board, combination[0]) && position_taken?(board, combination[1]) && position_taken?(board, combination[2])
+      return true
+    else
+      return false
     end
-  end
-  if winning_position == []
-    false
-  else
-    true
   end
 end
