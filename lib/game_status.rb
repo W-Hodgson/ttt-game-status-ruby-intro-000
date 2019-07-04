@@ -17,10 +17,10 @@ WIN_COMBINATIONS = [
 
 def won?(board)
   WIN_COMBINATIONS.each do |combination|
-    if !position_taken?(board, combination[0]) && !position_taken?(board, combination[1]) && !position_taken?(board, combination[2])
-      return false
-    else
+    if position_taken?(board, combination[0]) && position_taken?(board, combination[1]) && position_taken?(board, combination[2])
       return true
+    else
+      return false
     end
   end
 end
