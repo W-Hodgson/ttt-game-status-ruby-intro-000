@@ -15,6 +15,12 @@ WIN_COMBINATIONS = [
   [2, 4, 6]
 ]
 
+def full?(board)
+  board.all? do |position|
+    
+  end
+end
+
 def won?(board)
   winning_position = WIN_COMBINATIONS.select do |combination|
     combination.all? do |position|
